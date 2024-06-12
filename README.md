@@ -1,1 +1,1 @@
-# TheCawnporeMagazine.github.io
+# TheCawnporeMag.github.io
