@@ -167,6 +167,17 @@ nav .fa {
     transition: 1s;
 }
 
+.duotrope {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.chillsubs {
+    text-align: center;
+    margin-top: 50px;
+
+}
+
 .footer {
     background-color: #780000;
     color: #fdf0d5;
