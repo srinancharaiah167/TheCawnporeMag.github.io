@@ -22,7 +22,7 @@ Founded by students, *The Cawnpore Magazine* is a global platform for teen and u
 
 We’re open to collaboration! You can:
 
-- 🎨 Improve layout, colors, or responsiveness
+- 🎨 Improve layout, colors, or responsiveness (Theme colors #780000 & #fdf0d5)
 - 🔍 Make the site more accessible
 - 🖋️ Add alt text, links, and issue archives
 - 💌 Help with forms, interactive features, or animations
