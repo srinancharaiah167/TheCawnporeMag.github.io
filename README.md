@@ -2,7 +2,7 @@
 
 # 🌸 The Cawnpore Magazine Website
 
-Welcome to the official open-source repository of [The Cawnpore Magazine](https://TheCawnporeMag.github.io) — a student-led, non-profit literary and arts magazine dedicated to celebrating creativity, girlhood, and youth culture.
+Welcome to the official open-source repository of [The Cawnpore Magazine](https://www.thecawnporemag.co.in/) — a student-led, non-profit literary and arts magazine dedicated to celebrating creativity, girlhood, and youth culture.
 
 This site hosts our published issues, exclusive content, and multimedia experiments. We’re inviting developers, designers, and creatives to collaborate in making this space more accessible, interactive, and beautiful.
 
