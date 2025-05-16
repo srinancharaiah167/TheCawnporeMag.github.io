@@ -12,7 +12,7 @@ This site hosts our published issues, exclusive content, and multimedia experime
 
 Founded by students, *The Cawnpore Magazine* is a global platform for teen and university creatives. We publish poetry, prose, essays, fashion editorials, visual art, and games. With each issue, we aim to tell stories that live in the in-betweenness — of place, identity, memory, and imagination.
 
-💻 Website: [thecawnporemag.com](https://www.thecawnporemag.co.in/)  
+💻 Website: [thecawnporemag.co.in](https://www.thecawnporemag.co.in/)  
 📸 Instagram: [@thecawnporemagazine](https://www.instagram.com/thecawnporemagazine/?igsh=MWQzcXkxeGNkd29oeA%3D%3D%3E)  
 📧 Contact: thecawnporemagofficial@gmail.com
 
