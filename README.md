@@ -27,7 +27,7 @@ We’re open to collaboration! You can:
 - 🖋️ Add alt text, links, and issue archives
 - 💌 Help with forms, interactive features, or animations
 - 🛠️ Fix bugs and improve performance
-- ✨ Suggest features via [Issues](https://github.com/TheCawnporeMag/TheCawnporeMag.github.io/issues)
+- ✨ Suggest features via Issues
 
 We welcome beginners! Feel free to fork, explore, and learn.
 
