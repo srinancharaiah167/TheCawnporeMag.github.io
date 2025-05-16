@@ -38,10 +38,7 @@ We welcome beginners! Feel free to fork, explore, and learn.
 To contribute:
 
 1. **Fork** this repository
-2. **Clone** your fork:
-   ```bash
-   git clone https://github.com/YOUR-USERNAME/TheCawnporeMag.github.io
-   cd TheCawnporeMag.github.io
+2. **Clone** your fork
 3. Make your changes, then commit: git commit -m "Describe your changes"
 4. Push and submit a pull request
 
