@@ -1,41 +1,42 @@
-name: 🐛 Content Bug Report
-description: Report typos, broken links, or errors in published work
+name: 🐛 Bug Report
+description: Report a bug or unexpected behavior
 title: "[BUG] <short description>"
 labels: ["bug"]
 body:
   - type: markdown
     attributes:
       value: |
-        Found something broken in the magazine? Let us know here!
+        Thanks for reporting a bug! Please fill out the form below so we can help you faster.
   - type: input
-    id: location
+    id: environment
     attributes:
-      label: Where is the issue?
-      placeholder: "e.g., Page 12 of Issue 03, 'The Summer Poem'"
+      label: Environment
+      description: Where did this bug occur? (Browser, OS, device, etc.)
+      placeholder: "e.g. iOS 17, Chrome 125, MacBook M1"
   - type: textarea
-    id: description
+    id: steps
     attributes:
-      label: What's the bug?
+      label: Steps to Reproduce
+      description: Describe the steps to reproduce the behavior.
+      placeholder: |
+        1. Go to '...'
+        2. Click on '...'
+        3. See error
   - type: textarea
-    id: suggestion
+    id: expected
     attributes:
-      label: Suggest a fix (optional)
-      validations:
-        required: false
+      label: Expected Behavior
+      description: What did you expect to happen?
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual Behavior
+      description: What actually happened?
   - type: input
-    id: contributor
+    id: screenshot
     attributes:
-      label: Your Name
-      placeholder: "e.g., Kritika Singh"
-  - type: input
-    id: email
-    attributes:
-      label: Your Email
-      placeholder: "e.g., kritika@example.com"
-  - type: input
-    id: org
-    attributes:
-      label: Are you participating via an organization? (Optional)
-      placeholder: "e.g., GSSoC, SoC, DWG"
-      validations:
-        required: false
+      label: Screenshot (Optional)
+      description: Paste a link to your screenshot or upload it in the comments.
+      placeholder: "Paste image URL"
+    validations:
+      required: false
