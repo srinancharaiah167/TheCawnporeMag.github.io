@@ -40,3 +40,10 @@ body:
       placeholder: "Paste image URL"
     validations:
       required: false
+type: input
+    id: org
+    attributes:
+      label: Are you participating via an organization? (Optional)
+      placeholder: "e.g., GSSoC, SSoC, DWG"
+      validations:
+        required: false
