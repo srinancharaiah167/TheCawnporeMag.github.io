@@ -57,7 +57,7 @@ Our incredible team of teen writers, artists, and editors
 
 ## 📜 License
 This project is licensed under the MIT License.
-Feel free to remix and reuse with credit.
+
 
 ## 💌 A Note from Us
 This site is a home for creativity. Our main motive is to make it look more aesthetically pleasing with new features and helpful bug fixes. Your suggestions and contributions help keep it whimsical, accessible, and alive. Thanks for being here 🌷
