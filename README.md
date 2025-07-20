@@ -51,7 +51,6 @@ If you're new to GitHub, check out this guide to pull requests.
 This site is lovingly maintained by:
 
 Kritika, Founder & Editor-in-Chief
-Our incredible team of teen writers, artists, and editors
 
 ---
 
