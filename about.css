@@ -9,7 +9,9 @@ body{
 background-color: #fdf0d5;
 line-height: 1.6;
 }
-
+.header{
+    background-color: #fde74c40;
+}
 .header1 {
 min-height: 26vh;
 width: 100%;
@@ -106,7 +108,7 @@ nav .fa {
     }
     .nav-links {
         position: fixed;
-        background: #8bbad3;
+        background: #fde74c40;
         height: 100vh;
         width: 200px;
         top: 0;
@@ -181,7 +183,41 @@ padding: 10px;
 font-style: italic;
 font-family: 'Times New Roman', Times, serif;
 }
+#CardsHeading{
+    color : #780000;
+    font-size: 25px;
+    margin : 10px;
+}
 
+
+.landmarks{
+    display: flex;
+    justify-content: center;
+    width: 95%;
+    margin: auto;
+    text-align: center;
+    padding-top: 50px;
+    background-color: #ffd9e7;
+    border-radius: 10px;
+    flex-wrap: wrap;
+}
+.landmarkCard{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 380px;
+    margin :25px;
+}
+.landmarkCard img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.landmarkInfo{
+    height: 35%;
+}
 .landmarks {
     background-color: #fdf0d5;
     padding: 50px 20px;
@@ -193,33 +229,6 @@ font-family: 'Times New Roman', Times, serif;
     color: #780000;
     margin-bottom: 30px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.landmarks-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    justify-content: center;
-    align-items: stretch;
-}
-
-.landmark-col {
-    position: relative;
-    overflow: hidden;
-    border-radius: 15px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
-}
-
-.landmark-col:hover {
-    transform: translateY(-10px);
-}
-
-.landmark-col img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    border-radius: 15px;
 }
 
 .layer {
@@ -284,18 +293,30 @@ h2 {
 .footer {
     background-color: #780000;
     color: #fdf0d5;
-    margin-top: 20vh ;
+    margin-top: 5vh ;
     width: 100%;
     text-align: center;
     padding: 30px 0;
-
 }
-
+.footerContents{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+.footerLeft{
+    width: 65%;
+    margin : 20px;
+}
+.footer .footerLeft p{
+    text-align: left;
+    margin-left : 8%;
+}
 .footer h4 {
     color: #fdf0d5;
     margin-bottom: 25px;
     margin-top: 20px;
-    font-weight: 600;
+    font-weight: 300;
+    font-size: 27px;;
     font-family: 'Times New Roman', Times, serif;
 
 }
@@ -304,6 +325,10 @@ h2 {
     font-family: 'Times New Roman', Times, serif;
     text-align: center;
     font-size: 15px;
+}
+#mailID{
+    text-decoration: none;
+    color : #fdd983d3;
 }
 .icons {
     color: #fdf0d5;
@@ -326,9 +351,31 @@ h2 {
     margin: 0 13px;
     cursor: pointer;
     padding: 18px 0;
+    width: 35%;
 }
 
 .icons a {
     color: #fdf0d5;
     font-size: 25px;
+    padding : 10px;
+} 
+#insta:hover {
+    color: #ff04c0;
+    font-size: 25px;
+    padding : 10px;
+} 
+#linkedin:hover {
+    color: #215a8f;
+    font-size: 25px;
+    padding : 10px;
+} 
+#twitter:hover {
+    color: #949494;
+    font-size: 25px;
+    padding : 10px;
+} 
+#tumblr:hover {
+    color: #3c487c;
+    font-size: 25px;
+    padding : 10px;
 } 
