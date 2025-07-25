@@ -32,6 +32,7 @@ Fixes: #[Issue Number]
 - [ ] No merge conflicts.
 - [ ] Follows the design/style guide of the project.
 - [ ] Added contributor name above.
+- [ ] Confirmed that the feature fits well with the latest updated version of the website.
 
 ---
 
