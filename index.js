@@ -12,17 +12,15 @@ function scrollProgressBar() {
 document.addEventListener("DOMContentLoaded", function() {
     var navLinks = document.getElementById("navLinks");
 
-    window.showMenu = function() {
-        console.log("showMenu called");
-        navLinks.style.right = "0";
-        document.body.style.overflow = "hidden"; 
-    }
+   function toggleMenu(show) {
+  navLinks.style.right = show ? "0" : "-200px";
+  document.body.style.overflow = show ? "hidden" : "auto";
+}
 
-    window.hideMenu = function() {
-        console.log("hideMenu called");
-        navLinks.style.right = "-200px";
-        document.body.style.overflow = "auto";
-    }
+// Call like this:
+window.showMenu = () => toggleMenu(true);
+window.hideMenu = () => toggleMenu(false);
+
 
     // === Newsletter Form Validation ===
     var form = document.querySelector('form[action="/subscribe"]');
