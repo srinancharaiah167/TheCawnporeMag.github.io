@@ -215,8 +215,7 @@
       </div>
       
     </div>
-    <div class="issues_btn">
-        <a
+      <a
         href="issue.html"
         aria-label="View the latest Issue of The Cawnpore"
         id="issue1-btn"
@@ -229,7 +228,6 @@
         id="cta1-btn"
         >SUBMIT YOUR WORK</a
       >
-    </div>
     </section>
 
     <section class="listings">
@@ -307,7 +305,17 @@
         <p>Made with &#x2665; by Kritika Singh</p>
         <p>&copy; <span id="year"></span> THE CAWNPORE — ALL RIGHTS RESERVED</p>
       </div>
+      <audio id="bg-music" loop preload="auto">
+           <source src="assets/music/lofi.mp3" type="audio/mpeg" />
+           Your browser does not support the audio element.
+      </audio>
+      <div id="music-toggle" aria-label="Toggle Background Music" role="button" tabindex="0">
+        <i class="fa-solid fa-music"></i>
+      </div>
+
+
     </footer>
+
 
     <script src="index.js"></script>
 
@@ -322,6 +330,63 @@
             }, 6000); // 6000ms = 6 seconds (adjust as needed)
         });
         
+        const musicToggle = document.getElementById("music-toggle");
+        const bgMusic = document.getElementById("bg-music");
+
+  // Load previous state if exists
+  const isMusicEnabled = localStorage.getItem("musicEnabled") === "true";
+  if (isMusicEnabled) {
+    bgMusic.volume = 0;
+    bgMusic.play().then(() => {
+      fadeInMusic();
+      musicToggle.classList.add("active");
+    });
+  }
+
+  function fadeInMusic() {
+    let volume = 0;
+    const fadeIn = setInterval(() => {
+      if (volume < 1) {
+        volume += 0.05;
+        bgMusic.volume = volume;
+      } else {
+        clearInterval(fadeIn);
+      }
+    }, 100);
+  }
+
+  function fadeOutMusic() {
+    let volume = bgMusic.volume;
+    const fadeOut = setInterval(() => {
+      if (volume > 0) {
+        volume -= 0.05;
+        bgMusic.volume = volume;
+      } else {
+        clearInterval(fadeOut);
+        bgMusic.pause();
+      }
+    }, 100);
+  }
+
+  musicToggle.addEventListener("click", () => {
+    if (bgMusic.paused) {
+      bgMusic.volume = 0;
+      bgMusic.play().then(() => {
+        fadeInMusic();
+        localStorage.setItem("musicEnabled", "true");
+        musicToggle.classList.add("active");
+      });
+    } else {
+      fadeOutMusic();
+      localStorage.setItem("musicEnabled", "false");
+      musicToggle.classList.remove("active");
+    }
+  });
+
+
+
+        
     </script>
   </body>
 </html>
+

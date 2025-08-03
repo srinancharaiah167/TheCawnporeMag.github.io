@@ -336,10 +336,6 @@ nav .fa {
     /* max-width: 75ch; */
 }
 
-.issues_btn{
-    height: 10rem;
-}
-
 #issue1-btn {
     display: inline-block;
     text-decoration: none;
@@ -665,6 +661,27 @@ button:active{
     display: inline-block;
     animation: dots 1.5s steps(5, end) infinite;
 }
+#music-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #ffffffc0;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+#music-toggle.active {
+  background-color: #f0d9ff;
+  box-shadow: 0 0 10px #be94e5;
+}
+#music-toggle i {
+  font-size: 18px;
+  color: #444;
+}
+
 
 @keyframes dots {
     0% {
@@ -696,4 +713,6 @@ button:active{
         transform: rotate(360deg);
     }
 }
+
+
 
