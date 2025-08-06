@@ -11,6 +11,7 @@ function scrollProgressBar() {
 
 document.addEventListener("DOMContentLoaded", function () {
     // Menu toggle
+        window.onscroll = scrollProgressBar;
     const navLinks = document.getElementById("navLinks");
     function toggleMenu(show) {
         navLinks.style.right = show ? "0" : "-200px";
@@ -61,8 +62,9 @@ document.addEventListener("DOMContentLoaded", function () {
     // Loader
 const loaderScreen = document.getElementById('loading-screen');
 if (loaderScreen) {
-    setTimeout(() => loaderScreen.classList.add('fading'), 300);
-    setTimeout(() => loaderScreen.classList.add('hidden'), 500);
+    loaderScreen.classList.add('fading');
+loaderScreen.classList.add('hidden');
+
 }
 
 
