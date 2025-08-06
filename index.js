@@ -59,9 +59,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Loader
     const loaderScreen = document.getElementById('loading-screen');
-    if (loaderScreen) {
-        setTimeout(() => loaderScreen.classList.add('fading'), 1700);
-        setTimeout(() => loaderScreen.classList.add('hidden'), 2000);
+        setTimeout(() => loaderScreen.classList.add('fading'), 300); // was 1700
+        setTimeout(() => loaderScreen.classList.add('hidden'), 500); // was 2000
+
     }
 
     // Quote of the day
