@@ -1,6 +1,3 @@
-window.onscroll = function() {
-  scrollProgressBar();
-};
 let ticking = false;
         function scrollProgressBar() {
             const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
@@ -98,5 +95,3 @@ let ticking = false;
         if (whatsappBtn) {
             whatsappBtn.href = `https://wa.me/?text=${pageTitle}%20${pageURL}`;
         }
-// Update the year in the footer
-document.getElementById("year").textContent = new Date().getFullYear();
