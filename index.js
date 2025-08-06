@@ -10,15 +10,17 @@ function scrollProgressBar() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-    // Menu toggle
-        window.onscroll = scrollProgressBar;
-    const navLinks = document.getElementById("navLinks");
-    function toggleMenu(show) {
-        navLinks.style.right = show ? "0" : "-200px";
-        document.body.style.overflow = show ? "hidden" : "auto";
+    // Scroll Progress Bar
+    function scrollProgressBar() {
+        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        document.getElementById("progressBar").style.width = scrolled + "%";
     }
-    window.showMenu = () => toggleMenu(true);
-    window.hideMenu = () => toggleMenu(false);
+
+    window.addEventListener("scroll", scrollProgressBar);
+    scrollProgressBar(); // update once immediately
+
 
     // Search bar
     document.getElementById('searchBtn')?.addEventListener('click', function () {
