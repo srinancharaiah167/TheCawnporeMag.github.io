@@ -58,9 +58,13 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Loader
-    const loaderScreen = document.getElementById('loading-screen');
-        setTimeout(() => loaderScreen.classList.add('fading'), 300); // was 1700
-        setTimeout(() => loaderScreen.classList.add('hidden'), 500); // was 2000
+    // Loader
+const loaderScreen = document.getElementById('loading-screen');
+if (loaderScreen) {
+    setTimeout(() => loaderScreen.classList.add('fading'), 300); // fade quickly
+    setTimeout(() => loaderScreen.classList.add('hidden'), 500); // hide shortly after
+}
+
     // Quote of the day
     const quotes = [
         { text: "Poetry is not a luxury. It is a vital necessity of our existence.", author: "Audre Lorde" },
