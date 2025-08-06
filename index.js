@@ -58,12 +58,11 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Loader
-    // Loader
-const loaderScreen = document.getElementById('loading-screen');
-if (loaderScreen) {
-    setTimeout(() => loaderScreen.classList.add('fading'), 300); // fade quickly
-    setTimeout(() => loaderScreen.classList.add('hidden'), 500); // hide shortly after
-}
+    const loaderScreen = document.getElementById('loading-screen');
+    if (loaderScreen) {
+        setTimeout(() => loaderScreen.classList.add('fading'), 1700);
+        setTimeout(() => loaderScreen.classList.add('hidden'), 2000);
+    }
 
     // Quote of the day
     const quotes = [
