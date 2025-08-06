@@ -61,9 +61,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const loaderScreen = document.getElementById('loading-screen');
         setTimeout(() => loaderScreen.classList.add('fading'), 300); // was 1700
         setTimeout(() => loaderScreen.classList.add('hidden'), 500); // was 2000
-
-    }
-
     // Quote of the day
     const quotes = [
         { text: "Poetry is not a luxury. It is a vital necessity of our existence.", author: "Audre Lorde" },
