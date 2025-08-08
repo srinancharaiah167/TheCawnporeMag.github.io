@@ -40,61 +40,20 @@
       font-weight: bold;
       box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
     }
+
+    body {
+      margin: 0;
+      overflow-x: hidden;
+    }
   </style>
 </head>
-<canvas id="trail-canvas"></canvas>
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const canvas = document.getElementById("trail-canvas");
-    const ctx = canvas.getContext("2d");
-    const circles = [];
-    const maxCircles = 12;
-
-    function resizeCanvas() {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    }
-
-    resizeCanvas();
-    window.addEventListener("resize", resizeCanvas);
-
-    let mouse = { x: 0, y: 0 };
-
-    window.addEventListener("mousemove", (e) => {
-      mouse.x = e.clientX;
-      mouse.y = e.clientY;
-    });
-
-    function draw() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-      circles.push({ x: mouse.x, y: mouse.y, radius: 8 + Math.random() * 4, color: randomColor() });
-      if (circles.length > maxCircles) circles.shift();
-
-      circles.forEach((c, i) => {
-        ctx.beginPath();
-        ctx.arc(c.x, c.y, c.radius, 0, Math.PI * 2);
-        ctx.fillStyle = c.color;
-        ctx.globalAlpha = 1 - i / maxCircles;
-        ctx.fill();
-      });
-
-      ctx.globalAlpha = 1;
-      requestAnimationFrame(draw);
-    }
-
-    function randomColor() {
-      const colors = ["#ffb56b", "#ec805d", "#d5585c", "#c03b5d", "#950f5f", "#7c0060"];
-      return colors[Math.floor(Math.random() * colors.length)];
-    }
-
-    draw();
-  });
-</script>
 
 <body>
   <!-- Back Button -->
   <button onclick="history.back()" class="back-button">← Back</button>
+
+  <!-- Canvas Trail -->
+  <canvas id="trail-canvas"></canvas>
 
   <!-- Trailing Cursor Circles -->
   <div class="circle"></div>
@@ -110,7 +69,57 @@
   <div class="circle"></div>
   <div class="circle"></div>
 
-  <!-- Cursor JS -->
+  <!-- Canvas Trail JS -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const canvas = document.getElementById("trail-canvas");
+      const ctx = canvas.getContext("2d");
+      const circles = [];
+      const maxCircles = 12;
+
+      function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      }
+
+      resizeCanvas();
+      window.addEventListener("resize", resizeCanvas);
+
+      let mouse = { x: 0, y: 0 };
+
+      window.addEventListener("mousemove", (e) => {
+        mouse.x = e.clientX;
+        mouse.y = e.clientY;
+      });
+
+      function draw() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        circles.push({ x: mouse.x, y: mouse.y, radius: 8 + Math.random() * 4, color: randomColor() });
+        if (circles.length > maxCircles) circles.shift();
+
+        circles.forEach((c, i) => {
+          ctx.beginPath();
+          ctx.arc(c.x, c.y, c.radius, 0, Math.PI * 2);
+          ctx.fillStyle = c.color;
+          ctx.globalAlpha = 1 - i / maxCircles;
+          ctx.fill();
+        });
+
+        ctx.globalAlpha = 1;
+        requestAnimationFrame(draw);
+      }
+
+      function randomColor() {
+        const colors = ["#ffb56b", "#ec805d", "#d5585c", "#c03b5d", "#950f5f", "#7c0060"];
+        return colors[Math.floor(Math.random() * colors.length)];
+      }
+
+      draw();
+    });
+  </script>
+
+  <!-- DOM Circles Animation -->
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       const coords = { x: 0, y: 0 };
@@ -136,18 +145,19 @@
         let x = coords.x;
         let y = coords.y;
 
-        circles.forEach((circle, index) => {
-          circle.style.left = x - 12 + "px";
-          circle.style.top = y - 12 + "px";
-          circle.style.scale = (circles.length - index) / circles.length;
+        for (let i = 0; i < circles.length; i++) {
+          const circle = circles[i];
+          circle.style.left = (x - 12) + "px";
+          circle.style.top = (y - 12) + "px";
+          circle.style.scale = (circles.length - i) / circles.length;
 
           circle.x = x;
           circle.y = y;
 
-          const nextCircle = circles[index + 1] || circles[0];
-          x += (nextCircle.x - x) * 0.2;
-          y += (nextCircle.y - y) * 0.2;
-        });
+          const nextCircle = circles[i + 1] || circles[0];
+          x += (nextCircle.x - x) * 0.15;
+          y += (nextCircle.y - y) * 0.15;
+        }
 
         requestAnimationFrame(animateCircles);
       }
@@ -156,10 +166,7 @@
     });
   </script>
 
-  <!-- Your existing HTML content (header, issues, footer, etc.) goes here -->
-  <!-- Avoid duplicate <div class="circle"> blocks -->
-
-  <!-- Include your existing scripts if needed -->
+  <!-- Your other scripts -->
   <script src="index.js"></script>
 </body>
 
