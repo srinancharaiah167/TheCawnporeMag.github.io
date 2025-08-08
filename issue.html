@@ -158,6 +158,7 @@
     </button>
 </head>
 <body>
+
   <button class="back-button" onclick="history.back()">← Back</button>
 
   <div class="circle"></div><div class="circle"></div><div class="circle"></div><div class="circle"></div>
@@ -333,6 +334,12 @@
 
   // Start the animation
   animateCircles();
+    // Repeat the animation
+    requestAnimationFrame(animateCircles);
+  
+
+  // Start the animation
+  animateCircles();
 
 </script>
     <div class="progress-container">
@@ -426,7 +433,7 @@
       </div>
     </section>
 
-    
+
     <footer class="site-footer">
       <a class="back-to-top" href="#">
         <i class="fa-solid fa-chevron-up"></i>
