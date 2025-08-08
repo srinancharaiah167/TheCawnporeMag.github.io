@@ -71,100 +71,30 @@
 
   <!-- Canvas Trail JS -->
   <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const canvas = document.getElementById("trail-canvas");
-      const ctx = canvas.getContext("2d");
-      const circles = [];
-      const maxCircles = 12;
+  function animateCircles() {
+    if (isEffectEnabled) {
+      let x = coords.x;
+      let y = coords.y;
 
-      function resizeCanvas() {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-      }
+      circles.forEach(function (circle, index) {
+        circle.style.left = x - 12 + "px";
+        circle.style.top = y - 12 + "px";
+        circle.style.scale = (circles.length - index) / circles.length;
 
-      resizeCanvas();
-      window.addEventListener("resize", resizeCanvas);
+        circle.x = x;
+        circle.y = y;
 
-      let mouse = { x: 0, y: 0 };
-
-      window.addEventListener("mousemove", (e) => {
-        mouse.x = e.clientX;
-        mouse.y = e.clientY;
+        const nextCircle = circles[index + 1] || circles[0];
+        x += (nextCircle.x - x) * 0.15;
+        y += (nextCircle.y - y) * 0.15;
       });
+    }
+    requestAnimationFrame(animateCircles);
+  }
 
-      function draw() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
+  animateCircles();
+</script>
 
-        circles.push({ x: mouse.x, y: mouse.y, radius: 8 + Math.random() * 4, color: randomColor() });
-        if (circles.length > maxCircles) circles.shift();
-
-        circles.forEach((c, i) => {
-          ctx.beginPath();
-          ctx.arc(c.x, c.y, c.radius, 0, Math.PI * 2);
-          ctx.fillStyle = c.color;
-          ctx.globalAlpha = 1 - i / maxCircles;
-          ctx.fill();
-        });
-
-        ctx.globalAlpha = 1;
-        requestAnimationFrame(draw);
-      }
-
-      function randomColor() {
-        const colors = ["#ffb56b", "#ec805d", "#d5585c", "#c03b5d", "#950f5f", "#7c0060"];
-        return colors[Math.floor(Math.random() * colors.length)];
-      }
-
-      draw();
-    });
-  </script>
-
-  <!-- DOM Circles Animation -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const coords = { x: 0, y: 0 };
-      const circles = document.querySelectorAll(".circle");
-      const colors = [
-        "#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e", "#ec805d",
-        "#e36e5c", "#df685c", "#d5585c", "#d1525c", "#c5415d", "#c03b5d",
-        "#b22c5e", "#ac265e", "#9c155f", "#950f5f", "#830060", "#7c0060"
-      ];
-
-      circles.forEach((circle, index) => {
-        circle.x = 0;
-        circle.y = 0;
-        circle.style.backgroundColor = colors[index % colors.length];
-      });
-
-      window.addEventListener("mousemove", function (e) {
-        coords.x = e.clientX;
-        coords.y = e.clientY;
-      });
-
-      function animateCircles() {
-        let x = coords.x;
-        let y = coords.y;
-
-        for (let i = 0; i < circles.length; i++) {
-          const circle = circles[i];
-          circle.style.left = (x - 12) + "px";
-          circle.style.top = (y - 12) + "px";
-          circle.style.scale = (circles.length - i) / circles.length;
-
-          circle.x = x;
-          circle.y = y;
-
-          const nextCircle = circles[i + 1] || circles[0];
-          x += (nextCircle.x - x) * 0.15;
-          y += (nextCircle.y - y) * 0.15;
-        }
-
-        requestAnimationFrame(animateCircles);
-      }
-
-      animateCircles();
-    });
-  </script>
 
   <!-- Your other scripts -->
   <script src="index.js"></script>
